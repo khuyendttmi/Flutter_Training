@@ -1,8 +1,14 @@
-# flutter_training
+# FlutterTraining
 
-A new Flutter project.
+## GIT FLOW RULES
+A clean and consistent Git flow improves teamwork and tracking.
 
-## Getting Started
+### Task branch
+*Create branch*
+```bash
+git checkout -b name_branch
+```
+
 
 This project is a starting point for a Flutter application.
 
