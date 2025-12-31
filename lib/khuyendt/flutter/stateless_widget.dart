@@ -6,12 +6,13 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
-      child: Center(
-        child: Text('Hello StatelessWidget', style: TextStyle(color: Colors.amber),),
+    return Scaffold(
+      body: Center(
+        child: Text(
+          'Hello StatelessWidget',
+          style: TextStyle(color: Colors.amber, fontSize: 30, fontWeight: FontWeight.w600),
+        ),
       ),
-    )
-    ;
+    );
   }
 }

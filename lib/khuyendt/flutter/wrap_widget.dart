@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MyContainer extends StatelessWidget {
-  const MyContainer({super.key});
+class MyWrap extends StatelessWidget {
+  const MyWrap({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,23 +9,28 @@ class MyContainer extends StatelessWidget {
       appBar: AppBar(
         title: Center(
           child: Text(
-            'Container',
+            'Wrap',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
       ),
       body: SafeArea(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+          child: Wrap(
+            direction: Axis.horizontal,// xếp theo hàng ngang
+            // direction: Axis.vertical, xếp theo hàng dọc
+            spacing: 10,
+            runSpacing: 10.5,
+            textDirection: TextDirection.rtl, // xuống phải , ltr: xuống trái
+            verticalDirection: VerticalDirection.up,// xuống trên hay dưới
             children: [
               Container(
                 color: Colors.amber,
-                constraints: BoxConstraints(maxHeight: 200, maxWidth: 300),
-                // alignment: Alignment.center,
+                constraints: BoxConstraints(maxHeight: 100, maxWidth: 100),
+                // alignment: Alignment.center, căn theo toạ độ
                 child: Text(
-                  'Xin chào Flutter nhoá',
-                  style: TextStyle(fontSize: 30),
+                  'Xin chao flutter nhoá',
+                  style: TextStyle(fontSize: 50),
                   textDirection: TextDirection.ltr,
                   textAlign: TextAlign.center,
                 ),
@@ -49,23 +54,21 @@ class MyContainer extends StatelessWidget {
                   ],
                 ),
                 alignment: Alignment(0, 0), // điều chỉnh vị trí theo toạ độ
-                transform: Matrix4.rotationZ(1),
                 child: Text('Container'),
               ),
               Container(
                 decoration: BoxDecoration(
                   color: Colors.green,
-                  border: Border.all(color: Colors.red, width: 2),
-                  borderRadius: BorderRadius.circular(12),
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: NetworkImage(
-                      'https://cdnphoto.dantri.com.vn/biDybasem0PXE92oigzoXSOmbzo=/thumb_w/1280/2020/03/03/thanhbinh-1-a-3-docx-1583197236401.jpeg'
-                      ),
+                      'https://cdnphoto.dantri.com.vn/biDybasem0PXE92oigzoXSOmbzo=/thumb_w/1280/2020/03/03/thanhbinh-1-a-3-docx-1583197236401.jpeg',
+                    ),
                   ),
                 ),
                 child: SizedBox(width: 100, height: 100),
               ),
+              Container(width: 100, height: 100, color: Colors.blue,),
             ],
           ),
         ),

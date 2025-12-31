@@ -21,7 +21,7 @@ class _MyWidget2State extends State<MyWidget2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hello StatefulWidget'),
+        title: Text('Hello StatefullWidget'),
       ),
       body: Center(
         child: Column(
