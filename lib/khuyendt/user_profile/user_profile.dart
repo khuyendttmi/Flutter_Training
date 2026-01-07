@@ -9,7 +9,7 @@ class UserProfile extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final user = ref.watch(userProvider);
     final userNotifier = ref.read(userProvider.notifier);
-
+    
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(

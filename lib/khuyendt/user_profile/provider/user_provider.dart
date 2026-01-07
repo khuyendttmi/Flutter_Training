@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_training/khuyendt/user_profile/get_it/log_service.dart';
+import 'package:flutter_training/khuyendt/user_profile/get_it/service_locator.dart';
 import 'package:flutter_training/khuyendt/user_profile/model/user.dart';
 import 'package:flutter_training/khuyendt/user_profile/remote/user_api.dart';
 import 'package:flutter_training/khuyendt/user_profile/repository/user_repository.dart';
@@ -8,12 +10,14 @@ import 'package:riverpod/legacy.dart';
 
 class UserNotifier extends StateNotifier<User?> {
   final Ref ref;
+  final logger = getIt<LogService>();
 
   UserNotifier(this.ref) : super(null);
 
   Future<void> saveUser(int id) async {
     final user = await ref.read(userRepositoryProvider).getUserProfile(id);
     state = user;
+    logger.log('Lưu thông tin thành công');
   }
 
   Future<void> loadUser() async {
