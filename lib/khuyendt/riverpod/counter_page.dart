@@ -9,19 +9,63 @@ class MyCounterPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // 1. Dùng watch để theo dõi số counter, nếu số thay đổi thì Text tự cập nhật
+    // Dùng watch để theo dõi counter rebuild UI
     final count = ref.watch(counterProvider);
+    final todos = ref.watch(todoFutureProvider);
+    final todoStream = ref.watch(todoStreamProvider);
+
+    ref.listen(counterProvider, (previous, next) {
+      if (next == 5) {
+        print('Tôi đã click đến 5');// gọi snackbar, log,..
+      }
+    });
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Counter Page', style: TextStyle(fontWeight: FontWeight.w600)),
+        title: Text(
+          'Counter Page',
+          style: TextStyle(fontWeight: FontWeight.w600),
+        ),
         actions: [
-          IconButton(onPressed: () {
-            context.push('/todo');
-          }, icon: Icon(Icons.document_scanner)),
+          IconButton(
+            onPressed: () {
+              context.push('/todo');
+            },
+            icon: Icon(Icons.document_scanner),
+          ),
         ],
       ),
-      body: Center(child: Text('Số hiện tại: $count', style: TextStyle(fontSize: 18),)),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Text(
+              'counterProvider: $count',
+              style: TextStyle(fontSize: 18),
+            ),
+          ),
+          todos.when(
+            data: (data) {
+              return Text(
+                'FutureProvider: $data',
+                style: TextStyle(fontSize: 18),
+              );
+            },
+            error: (error, stackTrace) {
+              return Text(error.toString());
+            },
+            loading: () {
+              return Text('loading');
+            },
+          ),
+          todoStream.when(
+            data: (data) =>
+                Text('StreamProvider: $data', style: TextStyle(fontSize: 18)),
+            error: (error, stackTrace) => Text(stackTrace.toString()),
+            loading: () => Text('loading'),
+          ),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // 2. Dùng read để thay đổi giá trị khi bấm nút

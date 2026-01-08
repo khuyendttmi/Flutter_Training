@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_training/khuyendt/riverpod/todo/todo_model.dart';
 import 'package:riverpod/legacy.dart';
 
@@ -8,14 +9,14 @@ class TodoNotifier extends StateNotifier<List<Todo>> {
 
   void add(String title) {
     final todo = Todo(
-      id: Random().nextDouble().toString(),
+      id: Random().nextDouble().toInt(),
       title: title,
       completed: false,
     );
     state = [...state, todo];// lắng nghe
   }
 
-  void toggleTodo(String id) {
+  void toggleTodo(int id) {
     state =
         state.map((todo) {
           if (todo.id == id) {
@@ -25,7 +26,7 @@ class TodoNotifier extends StateNotifier<List<Todo>> {
         }).toList();
   }
 
-  void removeTodo(String id){
+  void removeTodo(int id){
     state = state.where((todo) => todo.id != id).toList();
   }
 }
@@ -33,3 +34,5 @@ class TodoNotifier extends StateNotifier<List<Todo>> {
 final todoProvider = StateNotifierProvider<TodoNotifier, List<Todo>>(
   (ref) => TodoNotifier(),
 );
+
+final todoFutureProvider = FutureProvider<TodoNotifier>((ref) => TodoNotifier(),);
