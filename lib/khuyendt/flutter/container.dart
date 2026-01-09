@@ -24,7 +24,7 @@ class MyContainer extends StatelessWidget {
                 constraints: BoxConstraints(maxHeight: 200, maxWidth: 300),
                 // alignment: Alignment.center,
                 child: Text(
-                  'Xin chào Flutter nhoá',
+                  'Xin chào Flutter nhá',
                   style: TextStyle(fontSize: 30),
                   textDirection: TextDirection.ltr,
                   textAlign: TextAlign.center,
