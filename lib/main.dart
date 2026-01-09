@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_training/khuyendt/bloc/counter_bloc.dart';
 import 'package:flutter_training/khuyendt/navigation/example_go_router.dart';
 import 'package:flutter_training/khuyendt/user_profile/get_it/service_locator.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setupLocator();
-  runApp(ProviderScope(child: MyApp()));
-  // runApp(BlocProvider(create: (context) => CounterBloc(), child: MyApp()));
+  // runApp(ProviderScope(child: MyApp()));
+  runApp(
+    BlocProvider(
+      lazy: true,//false: khởi tạo dù chưa gọi .read hay builderBloc,...
+      create: (context){
+        print('load Bloc');
+        return  CounterBloc();
+      },
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
