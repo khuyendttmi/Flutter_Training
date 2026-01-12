@@ -1,5 +1,5 @@
 
-import 'package:flutter_training/khuyendt/user_profile_remote/get_it/log_service.dart';
+import 'package:flutter_training/khuyendt/user_profile_retrofit/get_it/log_service.dart';
 import 'package:get_it/get_it.dart';
 
 // getIt: rút ngắn quá trình truyền dữ liệu giữa các controller

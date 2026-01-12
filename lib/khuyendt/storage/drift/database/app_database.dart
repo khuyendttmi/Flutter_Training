@@ -9,7 +9,7 @@ import 'todo_table.dart';
 
 part 'app_database.g.dart';
 
-// cơ sở dữ liệu quan hệ , dùng để lưu các dữ liệu lớn theo table Entities
+// cơ sở dữ liệu quan hệ , dùng để lưu các dữ liệu lớn theo table Entities 
 @DriftDatabase(tables: [Todos])
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
@@ -22,7 +22,7 @@ class AppDatabase extends _$AppDatabase {
     return into(todos).insert(
       TodosCompanion.insert(title: title),
     );
-    
+     
   }
 
   // READ

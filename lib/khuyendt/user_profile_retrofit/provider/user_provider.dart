@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_training/khuyendt/user_profile_remote/get_it/log_service.dart';
-import 'package:flutter_training/khuyendt/user_profile_remote/get_it/service_locator.dart';
-import 'package:flutter_training/khuyendt/user_profile_remote/model/user.dart';
-import 'package:flutter_training/khuyendt/user_profile_remote/remote/user_api.dart';
-import 'package:flutter_training/khuyendt/user_profile_remote/repository/user_repository.dart';
-import 'package:flutter_training/khuyendt/user_profile_remote/storage/local_storage.dart';
+import 'package:flutter_training/khuyendt/user_profile_retrofit/get_it/log_service.dart';
+import 'package:flutter_training/khuyendt/user_profile_retrofit/get_it/service_locator.dart';
+import 'package:flutter_training/khuyendt/user_profile_retrofit/model/user.dart';
+import 'package:flutter_training/khuyendt/user_profile_retrofit/remote/user_api.dart';
+import 'package:flutter_training/khuyendt/user_profile_retrofit/repository/user_repository.dart';
+import 'package:flutter_training/khuyendt/user_profile_retrofit/storage/local_storage.dart';
 import 'package:riverpod/legacy.dart';
 
 class UserNotifier extends StateNotifier<User?> {

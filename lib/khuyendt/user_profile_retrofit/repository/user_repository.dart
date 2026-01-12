@@ -1,7 +1,7 @@
-import 'package:flutter_training/khuyendt/user_profile_remote/model/user.dart'
+import 'package:flutter_training/khuyendt/user_profile_retrofit/model/user.dart'
     show User;
-import 'package:flutter_training/khuyendt/user_profile_remote/remote/user_api.dart';
-import 'package:flutter_training/khuyendt/user_profile_remote/storage/local_storage.dart';
+import 'package:flutter_training/khuyendt/user_profile_retrofit/remote/user_api.dart';
+import 'package:flutter_training/khuyendt/user_profile_retrofit/storage/local_storage.dart';
 
 class UserRepository {
   final UserApi api;

@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_training/khuyendt/bloc/counter_bloc.dart';
 import 'package:flutter_training/khuyendt/bloc/counter_page.dart';
 import 'package:flutter_training/khuyendt/bloc/counter_page_two.dart';
+import 'package:flutter_training/khuyendt/dio/user_dio_page.dart';
 import 'package:flutter_training/khuyendt/riverpod/contact/contact_page.dart';
 import 'package:flutter_training/khuyendt/riverpod/todo/todo_page.dart';
 import 'package:go_router/go_router.dart';
@@ -13,7 +14,7 @@ class ExampleGoRouter {
       GoRoute(
         path: '/',
         builder: (context, state) {
-          return CounterPage();
+          return UserDioPage();
         },
       ),
       GoRoute(

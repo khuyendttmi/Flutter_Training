@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_training/khuyendt/bloc/counter_bloc.dart';
 import 'package:flutter_training/khuyendt/bloc/counter_repository.dart';
+import 'package:flutter_training/khuyendt/dio/dio_getit.dart';
 import 'package:flutter_training/khuyendt/navigation/example_go_router.dart';
-import 'package:flutter_training/khuyendt/user_profile_remote/get_it/service_locator.dart';
+import 'package:flutter_training/khuyendt/user_profile_retrofit/get_it/service_locator.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setupLocator();
+  setupGetIt();
   // runApp(ProviderScope(child: MyApp()));
   runApp(
     RepositoryProvider(
