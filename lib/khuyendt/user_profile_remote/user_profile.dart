@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_training/khuyendt/user_profile/provider/user_provider.dart';
+import 'package:flutter_training/khuyendt/user_profile_remote/provider/user_provider.dart';
 
 class UserProfile extends ConsumerWidget {
   const UserProfile({super.key});

@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_training/khuyendt/bloc/counter_bloc.dart';
+import 'package:flutter_training/khuyendt/bloc/counter_repository.dart';
 import 'package:flutter_training/khuyendt/navigation/example_go_router.dart';
-import 'package:flutter_training/khuyendt/user_profile/get_it/service_locator.dart';
+import 'package:flutter_training/khuyendt/user_profile_remote/get_it/service_locator.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setupLocator();
   // runApp(ProviderScope(child: MyApp()));
   runApp(
-    BlocProvider(
-      lazy: true,//false: khởi tạo dù chưa gọi .read hay builderBloc,...
-      create: (context){
-        print('load Bloc');
-        return  CounterBloc();
-      },
-      child: MyApp(),
+    RepositoryProvider(
+      create: (context) => CounterRepository(),
+      child: BlocProvider(
+        create: (context) => CounterBloc(context.read<CounterRepository>()),
+        child: MyApp()
+      ),
     ),
+    // BlocProvider(
+    //   lazy: true,//false: khởi tạo dù chưa gọi .read hay builderBloc,...
+    //   create: (context){
+    //     print('load Bloc');
+    //     return  CounterBloc();
+    //   },
+    //   child: MyApp(),
+    // ),
   );
 }
 

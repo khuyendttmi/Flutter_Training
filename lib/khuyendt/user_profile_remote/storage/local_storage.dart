@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_training/khuyendt/user_profile/model/user.dart';
+import 'package:flutter_training/khuyendt/user_profile_remote/model/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalStorage {
