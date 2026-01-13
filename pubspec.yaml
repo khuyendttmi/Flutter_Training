@@ -24,6 +24,7 @@ dependencies:
   logger: ^2.6.0
   json_annotation: ^4.9.0
   get_it: ^9.2.0
+  dart_either: ^2.0.0
 
 dev_dependencies:
   flutter_test:
