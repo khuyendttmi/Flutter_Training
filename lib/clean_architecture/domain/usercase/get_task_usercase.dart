@@ -8,7 +8,6 @@ class GetTaskUsercase {
 
   GetTaskUsercase(this.taskRepository);
 
-  @override
   Future<List<Task>> call() async{
     return await taskRepository.getTasks();
   }

@@ -25,6 +25,7 @@ dependencies:
   json_annotation: ^4.9.0
   get_it: ^9.2.0
   dart_either: ^2.0.0
+  equatable: ^2.0.8
 
 dev_dependencies:
   flutter_test:

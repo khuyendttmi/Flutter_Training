@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
-import 'package:flutter_training/clean_architecture/data/source/local/drift/task_table.dart';
+import 'package:flutter_training/clean_architecture/data/repository/source/local/drift/task_table.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 

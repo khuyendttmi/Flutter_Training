@@ -1,6 +1,6 @@
 
 import 'package:flutter_training/clean_architecture/data/model/task_data.dart';
-import 'package:flutter_training/clean_architecture/data/source/remote/api/task_api.dart';
+import 'package:flutter_training/clean_architecture/data/repository/source/remote/api/task_api.dart';
 
 class TaskRemoteDataSource {
   final TaskApi _taskApi;

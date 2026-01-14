@@ -6,7 +6,6 @@ class CreateTaskUsercase {
 
   CreateTaskUsercase(this.taskRepository);
 
-  @override
   Future<void> call(Task task) {
     return taskRepository.createTask(task);
   }
